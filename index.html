@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulmones: qué funciona, qué daña</title>
+<meta name="description" content="Investigación forense de medicinas naturales y farmacéuticas para los pulmones. Ningún producto limpia los pulmones: qué tiene evidencia, qué no y qué daña.">
+<meta name="color-scheme" content="light">
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f5f5f7; --ink:#1d1d1f; --ink2:#6e6e73; --line:#d2d2d7;
+  --blue:#0071e3; --green:#1d8a3e; --amber:#b25e00; --red:#d70015; --gray:#6e6e73;
+  --green-bg:#e8f5ec; --amber-bg:#fff3e0; --red-bg:#fdeaec; --gray-bg:#efeff1; --blue-bg:#e8f1fc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+.narrow{max-width:720px;margin:0 auto}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:48px;gap:16px}
+nav strong{font-weight:600;font-size:.95rem;letter-spacing:-.01em;white-space:nowrap}
+nav ul{display:flex;gap:22px;list-style:none;overflow-x:auto;scrollbar-width:none}
+nav ul::-webkit-scrollbar{display:none}
+nav li a{color:var(--ink2);font-size:.8125rem;white-space:nowrap}
+nav li a:hover{color:var(--ink);text-decoration:none}
+
+/* hero */
+.hero{text-align:center;padding:96px 0 72px}
+.eyebrow{font-size:.9375rem;font-weight:600;color:var(--ink2);letter-spacing:-.01em;margin-bottom:12px}
+h1{font-size:clamp(2.75rem,8vw,5.5rem);line-height:1.04;letter-spacing:-.035em;font-weight:700}
+.hero p.lead{font-size:clamp(1.25rem,2.6vw,1.75rem);line-height:1.3;letter-spacing:-.015em;color:var(--ink2);max-width:760px;margin:24px auto 0;font-weight:500}
+.hero .cta{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 22px;border-radius:980px;font-size:1rem;background:var(--blue);color:#fff}
+.btn:hover{background:#0077ed;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--blue)}
+.btn.ghost:hover{text-decoration:underline}
+
+/* sections */
+section{padding:88px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg2);border-top:none}
+.kicker{font-size:.9375rem;font-weight:600;color:var(--ink2);margin-bottom:8px}
+h2{font-size:clamp(2rem,5vw,3.25rem);line-height:1.08;letter-spacing:-.03em;font-weight:700;max-width:820px}
+h3{font-size:1.5rem;line-height:1.2;letter-spacing:-.02em;font-weight:600;margin:48px 0 12px}
+p{margin-top:16px;color:#2c2c2e}
+p.sub{font-size:1.3125rem;line-height:1.4;letter-spacing:-.01em;color:var(--ink2);margin-top:18px;max-width:760px}
+.small{font-size:.875rem;color:var(--ink2)}
+ul.list{margin:16px 0 0 1.2em;color:#2c2c2e}
+ul.list li{margin-top:8px}
+
+/* cards */
+.grid{display:grid;gap:18px;margin-top:40px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--bg2);border-radius:22px;padding:30px 28px}
+section.alt .card{background:#fff}
+.card h4{font-size:1.25rem;letter-spacing:-.015em;font-weight:600;margin-bottom:4px}
+.card p{margin-top:8px;font-size:1rem}
+.big{font-size:3rem;font-weight:700;letter-spacing:-.04em;line-height:1}
+.card .tag{font-size:.8125rem;font-weight:600;color:var(--ink2);margin-bottom:12px;display:block}
+
+/* chips */
+.chip{display:inline-block;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:980px;white-space:nowrap}
+.c-green{background:var(--green-bg);color:var(--green)}
+.c-amber{background:var(--amber-bg);color:var(--amber)}
+.c-red{background:var(--red-bg);color:var(--red)}
+.c-gray{background:var(--gray-bg);color:var(--gray)}
+.c-blue{background:var(--blue-bg);color:var(--blue)}
+
+/* filter */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.filters button{font:inherit;font-size:.875rem;font-weight:500;padding:8px 16px;border-radius:980px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.filters button:hover{border-color:var(--ink2)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.verdicts{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:20px}
+.v{background:#fff;border-radius:18px;padding:20px 22px;border:1px solid rgba(0,0,0,.06)}
+.v[hidden]{display:none}
+.v b{display:block;font-size:1.0625rem;letter-spacing:-.01em;margin:8px 0 4px}
+.v span.d{font-size:.9rem;color:var(--ink2);line-height:1.45;display:block}
+
+/* table */
+.tablewrap{overflow-x:auto;margin-top:28px;border-radius:18px;border:1px solid var(--line);background:#fff}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:.9375rem}
+th{text-align:left;font-weight:600;font-size:.8125rem;color:var(--ink2);padding:14px 18px;background:var(--bg2);border-bottom:1px solid var(--line)}
+td{padding:16px 18px;vertical-align:top;border-bottom:1px solid #ececef}
+tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600;white-space:nowrap}
+
+/* callout */
+.callout{border-radius:22px;padding:28px;margin-top:32px;background:var(--amber-bg)}
+.callout.red{background:var(--red-bg)}
+.callout.blue{background:var(--blue-bg)}
+.callout h4{font-size:1.125rem;letter-spacing:-.01em;margin-bottom:6px}
+.callout p{margin-top:6px;font-size:1rem}
+
+.flag{display:inline-block;font-size:.72rem;font-weight:600;background:var(--amber-bg);color:var(--amber);border-radius:6px;padding:1px 7px;margin-left:4px;vertical-align:1px}
+
+footer{padding:56px 0 80px;background:var(--bg2);color:var(--ink2);font-size:.8125rem;line-height:1.6}
+footer p{color:var(--ink2);margin-top:10px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  nav{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+@media (max-width:640px){
+  section{padding:64px 0}
+  .hero{padding:64px 0 48px}
+  nav strong{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Secciones">
+  <div class="wrap">
+    <strong>Pulmones</strong>
+    <ul>
+      <li><a href="#resumen">Resumen</a></li>
+      <li><a href="#veredictos">Veredictos</a></li>
+      <li><a href="#limpieza">Limpieza</a></li>
+      <li><a href="#farmacos">Fármacos</a></li>
+      <li><a href="#naturales">Naturales</a></li>
+      <li><a href="#danos">Daños</a></li>
+      <li><a href="#fraude">Fraude</a></li>
+      <li><a href="#limites">Límites</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap rv">
+    <div class="eyebrow">Investigación forense · Medicinas naturales y farmacéuticas</div>
+    <h1>Ningún producto<br>limpia los pulmones.</h1>
+    <p class="lead">Qué tiene evidencia, qué no la tiene y qué puede dañar. Una auditoría fuente por fuente.</p>
+    <div class="cta">
+      <a class="btn" href="#veredictos">Ver los veredictos</a>
+      <a class="btn ghost" href="#resumen">Leer el resumen ›</a>
+    </div>
+  </div>
+</header>
+
+<section id="resumen" class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">Resumen</div>
+      <h2>Lo que sí funciona es poco, y casi nunca es un producto “natural”.</h2>
+      <p class="sub">Ningún fármaco ni suplemento demostró “limpiar” o “desintoxicar” los pulmones. Lo que tiene evidencia sólida es dejar de fumar: frena la caída de la función pulmonar y deja que la depuración natural del pulmón se recupere. No revierte el enfisema ni la fibrosis ya establecidos.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card rv">
+        <span class="tag">Fármacos</span>
+        <h4>Mejoran exacerbaciones y función</h4>
+        <p>Inhalados para asma y EPOC, biológicos para EPOC eosinofílica, antifibróticos y fármacos para dejar de fumar. Casi ninguno tiene efecto probado sobre la mortalidad.</p>
+      </div>
+      <div class="card rv">
+        <span class="tag">Naturales</span>
+        <h4>Apoyo modesto y específico</h4>
+        <p>NAC y cineol en EPOC, miel en tos aguda infantil, vitamina D solo con déficit severo. Los “tés”, parches y mezclas de limpieza pulmonar no tienen ensayos que los sustenten.</p>
+      </div>
+      <div class="card rv">
+        <span class="tag">Riesgos</span>
+        <h4>Algunos suplementos dañan</h4>
+        <p>El betacaroteno en fumadores aumentó el cáncer de pulmón. Consuelda, kava, té verde concentrado, cúrcuma y regaliz tienen toxicidad hepática o cardiovascular.</p>
+      </div>
+    </div>
+    <div class="callout blue rv">
+      <h4>Cómo leer este informe</h4>
+      <p>Las notas de investigación se basaron en resúmenes de buscadores y no abrieron la mayoría de los documentos primarios. Las cifras deben verificarse contra la fuente primaria antes de usarlas en decisiones de salud, y cada ítem débil está marcado. Esto es información de investigación, no consejo médico.</p>
+    </div>
+  </div>
+</section>
+
+<section id="veredictos">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">Veredictos</div>
+      <h2>Cada sustancia, con su nivel de evidencia.</h2>
+      <p class="sub">Filtra por veredicto. Las etiquetas resumen lo que dicen las notas, no un juicio propio.</p>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filtrar veredictos">
+      <button aria-pressed="true" data-f="all">Todos</button>
+      <button aria-pressed="false" data-f="green">Respaldado</button>
+      <button aria-pressed="false" data-f="amber">Efecto pequeño o débil</button>
+      <button aria-pressed="false" data-f="gray">Sin evidencia</button>
+      <button aria-pressed="false" data-f="red">Daño documentado</button>
+    </div>
+    <div class="verdicts" id="verdicts">
+      <div class="v" data-v="green"><span class="chip c-green">Respaldado · fuerte</span><b>Dejar de fumar</b><span class="d">Menor caída del VEF1 en quienes lo sostienen, con la mayor ganancia el primer año. Lo único con evidencia de alta certeza.</span></div>
+      <div class="v" data-v="green"><span class="chip c-green">Respaldado</span><b>Inhalados en asma y EPOC</b><span class="d">GINA 2025: ICS-formoterol como aliviador. GOLD 2025: triple terapia con indicación de corticoide inhalado.</span></div>
+      <div class="v" data-v="green"><span class="chip c-green">Respaldado</span><b>Biológicos en EPOC eosinofílica</b><span class="d">Dupilumab: razón de tasas 0,69 combinada. Mepolizumab: 21% menos exacerbaciones.</span></div>
+      <div class="v" data-v="green"><span class="chip c-green">Respaldado</span><b>Antifibróticos en FPI</b><span class="d">Nintedanib y pirfenidona frenan la caída de la CVF. Sin efecto demostrado en mortalidad.</span></div>
+      <div class="v" data-v="green"><span class="chip c-green">Respaldado</span><b>Fármacos para dejar de fumar</b><span class="d">Cigarrillo electrónico con nicotina, vareniclina y citisina, lo más eficaz (Cochrane 2023, certeza alta).</span></div>
+      <div class="v" data-v="amber"><span class="chip c-amber">Efecto pequeño</span><b>NAC y mucolíticos</b><span class="d">NNTB de 8 en unos 9 meses. Efecto menor en los ensayos nuevos y posible sesgo de publicación.</span></div>
+      <div class="v" data-v="amber"><span class="chip c-amber">Efecto pequeño</span><b>Cineol (eucaliptol)</b><span class="d">Un ensayo principal (n=242) en EPOC. Sin replicación independiente hallada.</span></div>
+      <div class="v" data-v="amber"><span class="chip c-amber">Efecto pequeño</span><b>Miel en tos aguda</b><span class="d">Niños mayores de 1 año, hasta 3 días. Certeza baja. Contraindicada bajo 1 año por botulismo.</span></div>
+      <div class="v" data-v="amber"><span class="chip c-amber">Condicional</span><b>Vitamina D</b><span class="d">Beneficio solo con déficit severo (25(OH)D &lt;25 nmol/L). En EPOC, poca o ninguna diferencia.</span></div>
+      <div class="v" data-v="amber"><span class="chip c-amber">Débil</span><b>Pelargonium sidoides</b><span class="d">Cochrane 2013: evidencia de baja calidad, con ensayos sobre todo del grupo del fabricante.</span></div>
+      <div class="v" data-v="amber"><span class="chip c-amber">Débil</span><b>Hoja de hiedra</b><span class="d">Significación clínica mínima y alto riesgo de sesgo. Sin efectos adversos graves.</span></div>
+      <div class="v" data-v="amber"><span class="chip c-amber">Hospitalario</span><b>Magnesio intravenoso</b><span class="d">Útil en asma aguda grave en urgencias (OR 0,75 de ingreso). No es un suplemento oral.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">No probado</span><b>Vitamina C</b><span class="d">No reduce la incidencia de resfríos en población general. Acorta la duración 8% en adultos y 14% en niños.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">Sin beneficio</span><b>Omega-3 en EPOC</b><span class="d">Sin diferencia en función pulmonar ni calidad de vida.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">Ensayo negativo</span><b>Sulforafano</b><span class="d">No elevó los genes diana de Nrf2 en el pulmón de pacientes con EPOC.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">Insuficiente</span><b>Nigella sativa (asma)</b><span class="d">4 ECA pequeños (187 pacientes). Los autores: insuficiente para uso rutinario.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">Incierto</span><b>Quercetina</b><span class="d">Datos débiles, base pequeña.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">Sin ensayos</span><b>Verbasco (mullein)</b><span class="d">Ningún ensayo humano publicado. Los pulmones se depuran solos por el sistema mucociliar.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">Sin ensayos</span><b>Tés, parches y mezclas “detox”</b><span class="d">Ningún ensayo aleatorizado sobre ningún producto de limpieza pulmonar.</span></div>
+      <div class="v" data-v="gray"><span class="chip c-gray">Sin evidencia</span><b>Boldo, quillay, litre, matico</b><span class="d">Sin evidencia respiratoria clínica ni de laboratorio. El matico ni siquiera fue encontrado.</span></div>
+      <div class="v" data-v="red"><span class="chip c-red">Daño documentado</span><b>Betacaroteno en fumadores</b><span class="d">CARET: RR 1,28 de cáncer de pulmón, con 17% más muertes por todas las causas.</span></div>
+      <div class="v" data-v="red"><span class="chip c-red">Toxicidad</span><b>Consuelda y petasita</b><span class="d">Alcaloides pirrolizidínicos. La FDA pidió en 2001 retirar suplementos orales de consuelda.</span></div>
+      <div class="v" data-v="red"><span class="chip c-red">Toxicidad</span><b>Kava</b><span class="d">Advertencia de la FDA en 2002. Prohibida su venta en Canadá.</span></div>
+      <div class="v" data-v="red"><span class="chip c-red">Toxicidad hepática</span><b>Extracto de té verde</b><span class="d">Efectos en el hígado desde 800 mg de EGCG al día, sin dosis segura identificada (EFSA 2018).</span></div>
+      <div class="v" data-v="red"><span class="chip c-red">Toxicidad hepática</span><b>Cúrcuma en suplemento</b><span class="d">Daño hepático raro pero real: serie DILIN de 10 casos, 7 con HLA-B*35:01, 1 muerte.</span></div>
+      <div class="v" data-v="red"><span class="chip c-red">Riesgo</span><b>Regaliz</b><span class="d">Hipopotasemia, arritmia y presión alta. Eleva la exposición a corticoides.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="limpieza" class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">01 · Limpieza pulmonar</div>
+      <h2>Es una categoría de marketing, no de farmacología.</h2>
+      <p class="sub">El marketing se apropia de fisiología real: el pulmón sí se depura, pero lo hace solo.</p>
+    </div>
+    <div class="narrow">
+      <p class="rv">La <a href="https://www.lung.org/about-us/blog/2019/07/can-you-detox-your-lungs.html">Asociación Americana del Pulmón</a> sostiene que los productos de desintoxicación o limpieza pulmonar carecen de pruebas y que algunos pueden ser peligrosos. La medida más eficaz para minimizar y sanar el daño es dejar de fumar. Una fuente hospitalaria secundaria (<a href="https://www.adventhealth.com/blogs/natural-lung-detox-what-actually-helps-your-lungs">AdventHealth</a>) coincide: ningún producto ha mostrado eliminar el daño acumulado y no hay evidencia fuerte para ningún té o suplemento.</p>
+      <p class="rv">Del verbasco (mullein), ingrediente estrella de estas mezclas, las notas no hallaron ningún ensayo humano. Un neumólogo consultado por <a href="https://africacheck.org/fact-checks/meta-programme-fact-checks/no-evidence-mullein-leaf-fights-asthma-or-detoxes-lungs">Africa Check</a> afirmó que no hay evidencia científica de que desintoxique los pulmones, que se depuran solos por el sistema mucociliar. Esto es ausencia de evidencia hallada con búsqueda limitada, no una revisión sistemática.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card rv"><span class="tag">Aclaramiento mucociliar</span><div class="big">63%</div><p>de los exfumadores mejoran al mes, y <b>85%</b> a los 12 meses. Estudios nasales pequeños (n=20), vía resumen de buscador. No es vía aérea baja.</p></div>
+      <div class="card rv"><span class="tag">Lung Health Study</span><div class="big">5.887</div><p>fumadores con EPOC leve. Quienes dejaron de fumar de forma sostenida tuvieron la menor caída de VEF1, con la mayor ganancia en el primer año (<a href="https://experts.umn.edu/en/publications/effects-of-smoking-intervention-and-the-use-of-an-inhaled-anticho/">JAMA 1994</a>).</p></div>
+      <div class="card rv"><span class="tag">Seguimiento</span><div class="big">14,5 años</div><p>el seguimiento mostró beneficio en mortalidad de la intervención para dejar de fumar (<a href="https://ccbr.biostat.umn.edu/past/lung-health-studies">UMN</a>).</p></div>
+    </div>
+    <div class="narrow">
+      <p class="rv">Un análisis de cohortes agrupadas sugiere un exceso pequeño pero persistente de caída de VEF1 en exfumadores (solo resumen de prensa, sin verificar). El pulmón se estabiliza y se depura, pero no se “resetea”. Los plazos exactos (“12 semanas”, “30%”) que circulan en páginas de consumo no pudieron rastrearse a estudios primarios y deben descartarse.</p>
+      <p class="rv">Los mucolíticos son lo más cercano a “limpiar” que ofrece la farmacología. Aflojan el esputo y reducen modestamente las exacerbaciones en pacientes seleccionados con EPOC, pero no eliminan el daño ni “desintoxican” (<a href="https://www.cochrane.org/CD001287/lungs/mucolytic-agents-chronic-bronchitis-or-chronic-obstructive-pulmonary-disease">Cochrane CD001287</a>). Que se expectore tras un “flush” no demuestra efecto alguno, según una fuente de consumo (WebMD, solo resumen).</p>
+    </div>
+  </div>
+</section>
+
+<section id="farmacos">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">02 · Fármacos</div>
+      <h2>Mejoran exacerbaciones y función. Rara vez la mortalidad.</h2>
+      <p class="sub">Jerarquía clara, con una salvedad: el texto primario de GOLD y GINA no se abrió y las cifras vienen de resúmenes secundarios.</p>
+    </div>
+
+    <h3 class="rv">EPOC: inhalados y nuevas opciones</h3>
+    <div class="narrow">
+      <p class="rv">La guía GOLD 2025 recomienda triple terapia sobre ICS-LABA cuando hay indicación de corticoide inhalado, y escalar con eosinófilos sobre 100 células/µL (<a href="https://www.healio.com/news/pulmonology/20241114/2025-gold-report-addresses-cardiovascular-risk-climate-change-pulmonary-hypertension">Healio, resumen de GOLD 2025</a>).</p>
+    </div>
+    <div class="grid g2">
+      <div class="card rv"><span class="tag">Cochrane 2023 · 4 ensayos · 15.412 personas</span><h4>Triple terapia vs LABA/LAMA</h4>
+        <p>Mortalidad por todas las causas <b>1,4% vs 2,0%</b> (OR 0,70; IC 95% 0,54–0,90), certeza <b>baja</b>. A costa de más neumonía grave: <b>3,3% vs 1,9%</b> (OR 1,74), certeza moderada. <a href="https://www.cochrane.org/evidence/CD011600_stable-copd-should-inhaled-corticosteroids-be-used-combination-long-acting-beta2-agonistlong-acting">Cochrane CD011600</a></p></div>
+      <div class="card rv"><span class="tag">Metaanálisis 2020</span><h4>No supera a los broncodilatadores</h4>
+        <p>La triple terapia no supera a los broncodilatadores de mantenimiento salvo en pacientes con al menos una exacerbación el año previo (<a href="https://pubmed.ncbi.nlm.nih.gov/32692253/">PubMed 32692253</a>, según el resumen del buscador).</p></div>
+      <div class="card rv"><span class="tag">FDA · junio 2024</span><h4>Ensifentrina (nebulizada)</h4>
+        <p>Ganancias de VEF1 de unos <b>87 y 94 mL</b> sobre placebo. Efecto en síntomas significativo en un ensayo y no en el otro. Sin reducción de exacerbaciones establecida (<a href="https://www.ajmc.com/view/fda-approves-ensifentrine-for-maintenance-treatment-of-adult-patients-with-copd">AJMC</a>; <a href="https://link.springer.com/article/10.1007/s41030-025-00322-1">Springer 2025</a>).</p></div>
+      <div class="card rv"><span class="tag">BOREAS y NOTUS</span><h4>Dupilumab</h4>
+        <p>Redujo las exacerbaciones moderadas a graves con razones de tasas de <b>0,70 y 0,66</b> (0,69 combinado) (<a href="https://www.hcplive.com/view/conference-recap-6-key-trials-from-american-thoracic-society-2025">HCPLive, ATS 2025</a>).</p></div>
+      <div class="card rv"><span class="tag">MATINEE · sobre triple terapia</span><h4>Mepolizumab</h4>
+        <p>Redujo las exacerbaciones <b>21%</b>. Una comparación indirecta con dupilumab dio razón de tasas 0,83 (IC 0,68–1,01, no significativa); no existe ensayo directo. Que GOLD 2026 lo incorpore viene de un solo artículo <span class="flag">sin confirmar</span> (<a href="https://link.springer.com/article/10.1007/s40265-026-02303-3">Drugs 2026</a>).</p></div>
+      <div class="card rv"><span class="tag">Prevención de exacerbaciones</span><h4>Roflumilast y azitromicina</h4>
+        <p>Tienen respaldo, pero no hay ensayo comparativo directo. Un estudio observacional de 2026 en 7.550 pares emparejados favoreció a azitromicina, con el riesgo de confusión propio de ese diseño (<a href="https://www.hcplive.com/view/real-world-data-favor-azithromycin-over-roflumilast-in-copd">HCPLive</a>). Las magnitudes “de memoria” de las notas se omiten por no estar verificadas.</p></div>
+    </div>
+
+    <h3 class="rv">Asma</h3>
+    <div class="narrow"><p class="rv">GINA 2025 mantiene como preferido el Track 1, con ICS-formoterol como aliviador y SMART como eje en asma moderada a grave (<a href="https://ginasthma.org/wp-content/uploads/2025/11/GINA-2025-Update-25_11_08-WMS.pdf">GINA 2025</a>).</p></div>
+
+    <h3 class="rv">Fibrosis pulmonar idiopática</h3>
+    <div class="narrow">
+      <p class="rv">Nintedanib reduce la caída anual de CVF: cerca de <b>115 vs 240 mL</b> y <b>114 vs 207 mL</b> en INPULSIS-1 y -2. Pirfenidona también la frena. Ninguno con efecto demostrado en mortalidad (<a href="https://www.wikijournalclub.org/wiki/INPULSIS_Trials">Wiki Journal Club</a>; <a href="https://consultqd.clevelandclinic.org/pirfenidone-and-nintedanib-novel-agents-in-the-treatment-of-idiopathic-pulmonary-fibrosis">Cleveland Clinic</a>).</p>
+      <p class="rv">Nerandomilast fue aprobado por la FDA en octubre de 2025, con una caída de CVF de −106 y −122 mL frente a −170 mL con placebo (<a href="https://www.pulmonaryfibrosis.org/about-us/news-and-media/news/article/2025/10/07/fda-approves-nerandomilast-(jascayd)-for-idiopathic-pulmonary-fibrosis">Pulmonary Fibrosis Foundation</a>).</p>
+    </div>
+
+    <h3 class="rv">Dejar de fumar</h3>
+    <div class="narrow">
+      <p class="rv">La red de metaanálisis Cochrane 2023 ubicó a los cigarrillos electrónicos con nicotina, la vareniclina y la citisina como lo más eficaz (certeza alta), con aditividad de la terapia combinada de reemplazo de nicotina (<a href="https://pubmed.ncbi.nlm.nih.gov/37696529/">PubMed 37696529</a>).</p>
+    </div>
+    <div class="callout rv">
+      <h4>Una tensión sin resolver</h4>
+      <p>La guía GOLD, según un resumen, aún no ve evidencia suficiente para recomendar el cigarrillo electrónico como ayuda de cesación (<a href="https://guidelinecentral.com/guideline/2231686">GOLD 2025, Guideline Central</a>), mientras Cochrane lo ubica entre los más eficaces. Este informe no la resuelve.</p>
+    </div>
+  </div>
+</section>
+
+<section id="naturales" class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">03 · Productos naturales</div>
+      <h2>Lo único “natural” con apoyo es pequeño.</h2>
+      <p class="sub">Mucolíticos, cineol y miel. Todo lo demás es débil, negativo o no probado.</p>
+    </div>
+
+    <h3 class="rv">NAC y mucolíticos</h3>
+    <div class="narrow">
+      <p class="rv">La revisión Cochrane 2019 (Poole) concluye una reducción pequeña del riesgo de exacerbación, con <b>NNTB de 8</b> (IC 95% 7–10) en unos 9 meses, efectos menores en los ensayos nuevos y posible sesgo de publicación (<a href="https://www.cochrane.org/CD001287/lungs/mucolytic-agents-chronic-bronchitis-or-chronic-obstructive-pulmonary-disease">Cochrane CD001287</a>; <a href="https://evidence.nihr.ac.uk/alert/mucus-thinning-drugs-slightly-reduce-copd-symptom-flare-ups/">NIHR</a>). Las dos notas describen distinto el tamaño de esa revisión (28 ensayos y 6.723 personas, o 38 y 10.377), así que el conteo exacto queda <span class="flag">sin confirmar</span>.</p>
+      <p class="rv">Un metaanálisis de 14 estudios dio RR 0,88 (IC 0,80–0,97) para exacerbaciones agudas con NAC (<a href="https://apm.amegroups.com/article/view/72787">Ann Palliat Med</a>); uno de 2013 no halló beneficio con dosis bajas, lo que sugiere dependencia de dosis. En BRONCUS (n=523) la reducción aparece solo en pacientes sin corticoide inhalado, y la carbocisteína en dosis alta (1.500 mg/día, n=709) redujo exacerbaciones 25% (<a href="https://publications.ersnet.org/content/errev/19/116/134">ERS Reviews</a>, fuente antigua). Un metaanálisis de 2024 confirma menos exacerbaciones y hospitalizaciones en EPOC estable, sin ganancia clara de función ni calidad de vida (<a href="https://pubmed.ncbi.nlm.nih.gov/39413571/">PubMed 39413571</a>).</p>
+      <p class="rv">Que NAC se venda como suplemento no lo convierte en “natural” en el sentido de una hierba: es el mismo principio activo de la clase mucolítica.</p>
+    </div>
+
+    <h3 class="rv">Cineol, miel, Pelargonium e hiedra</h3>
+    <div class="narrow">
+      <p class="rv"><b>1,8-cineol (eucaliptol).</b> Un ensayo doble ciego de 242 pacientes con EPOC estable (200 mg tres veces al día por 6 meses) mostró menor frecuencia, duración y gravedad de exacerbaciones, mejor función pulmonar y calidad de vida, con eventos adversos similares (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2720945">Worth 2009</a>). Una revisión reporta razón de tasas 0,79 en exacerbaciones y hospitalizaciones, sin detalles verificados (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7467491">PMC7467491</a>). La evidencia descansa en un ensayo principal más trabajo asociado al fabricante.</p>
+      <p class="rv"><b>Miel.</b> En niños mayores de un año, hasta 3 días, probablemente alivia la tos más que placebo o salbutamol, con efecto similar a dextrometorfano (certeza baja). Síntomas gastrointestinales: 12% con miel y 11% con placebo (<a href="https://www.cochrane.org/CD007094/">Cochrane CD007094</a>).</p>
+      <p class="rv"><b>Pelargonium sidoides.</b> Cochrane 2013 halló beneficio con la forma líquida y no con tabletas, con evidencia de baja calidad, y gran parte de los ensayos viene del grupo investigador del fabricante (<a href="https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD006323.pub3/information">Cochrane CD006323</a>).</p>
+      <p class="rv"><b>Hoja de hiedra (Hedera helix).</b> Una revisión de 2021 mostró significación clínica mínima, alto riesgo de sesgo y ningún efecto adverso grave (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8275562/">PMC8275562</a>).</p>
+    </div>
+
+    <h3 class="rv">Suplementos con evidencia más débil o negativa</h3>
+    <div class="tablewrap rv">
+      <table>
+        <thead><tr><th>Producto</th><th>Hallazgo</th><th>Nivel de evidencia</th></tr></thead>
+        <tbody>
+          <tr><td>Vitamina D</td><td>Infección respiratoria aguda: OR 0,88 (IC 0,81–0,96) sobre 10.933 participantes, con mayor beneficio si 25(OH)D &lt;25 nmol/L (<a href="https://www.bmj.com/content/356/bmj.i6583">BMJ 2017</a>). En EPOC, poca o ninguna diferencia en exacerbaciones (<a href="https://www.cochrane.org/CD013284/AIRWAYS_vitamin-d-management-chronic-obstructive-pulmonary-disease">Cochrane CD013284</a>).</td><td>Metaanálisis; beneficio solo en déficit severo</td></tr>
+          <tr><td>Vitamina C</td><td>No reduce la incidencia de resfríos en población general; acorta 8% (adultos) y 14% (niños) (<a href="https://www.cochrane.org/CD000980/">Cochrane CD000980</a>).</td><td>Cochrane 2013; actualización no revisada</td></tr>
+          <tr><td>Omega-3</td><td>Sin diferencia en función pulmonar ni calidad de vida en EPOC (<a href="https://dovepress.com/effect-of-omega-3-fatty-acids-on-chronic-obstructive-pulmonary-disease-peer-reviewed-fulltext-article-COPD">Dovepress 2021</a>).</td><td>Metaanálisis de ECA; calidad limitada</td></tr>
+          <tr><td>Nigella sativa (asma)</td><td>Mejor control y VEF1 en 4 ECA (187 pacientes); autores: evidencia insuficiente para uso rutinario (<a href="https://pubmed.ncbi.nlm.nih.gov/31892440/">PubMed 31892440</a>).</td><td>Pequeña, heterogénea</td></tr>
+          <tr><td>Sulforafano</td><td>No elevó genes diana de Nrf2 en pulmón de pacientes con EPOC (<a href="https://clinicaltrials.gov/study/NCT01335971">NCT01335971</a>).</td><td>Ensayo negativo</td></tr>
+          <tr><td>Quercetina</td><td>Resultados inciertos en infecciones respiratorias altas y COVID-19 en estudios pequeños (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4863266">PMC4863266</a>).</td><td>Débil, base pequeña</td></tr>
+          <tr><td>Magnesio</td><td>IV en urgencias por asma aguda en adultos: OR 0,75 para ingreso (0,60–0,92) (<a href="https://cochranelibrary.com/cdsr/doi/10.1002/14651858.CD010909.pub2/information/en">Cochrane CD010909</a>). No es un suplemento oral.</td><td>Tratamiento hospitalario; magnesio oral: sin datos hallados</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout rv">
+      <h4>Plantas chilenas y vacíos</h4>
+      <p>Para boldo, quillay, litre y matico la búsqueda no halló evidencia respiratoria clínica ni de laboratorio; el uso tradicional no equivale a eficacia. Tampoco hay datos verificados para jengibre, orégano, tomillo solo, regaliz en enfermedad pulmonar, té verde, cúrcuma pulmonar, vitamina E sobre función pulmonar ni NAC en fibrosis pulmonar idiopática. Cualquier afirmación sobre ellos sin fuente debe tratarse como no verificada.</p>
+    </div>
+  </div>
+</section>
+
+<section id="danos">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">04 · Daños</div>
+      <h2>De los suplementos “antioxidantes” a las hierbas hepatotóxicas.</h2>
+    </div>
+
+    <h3 class="rv">Betacaroteno y vitamina E en fumadores</h3>
+    <div class="grid g2">
+      <div class="card rv"><span class="tag">CARET · 18.314 personas de alto riesgo</span><div class="big">RR 1,28</div><p>de cáncer de pulmón (IC 1,04–1,57) con 30 mg de betacaroteno más retinol, y 17% más muertes por todas las causas (<a href="https://webarchive.library.unt.edu/eot2008/20090507004416/http://www.nih.gov/news/pr/nov96/nci-05.htm">NIH 1996</a>).</p></div>
+      <div class="card rv"><span class="tag">ATBC · más de 29.000 fumadores varones</span><div class="big">+8%</div><p>de mortalidad y mayor incidencia de cáncer de pulmón con 20 mg/día (<a href="https://pubmed.ncbi.nlm.nih.gov/8127329/">PubMed 8127329</a>). Las notas discrepan en el exceso de cáncer (16% o ~18%) <span class="flag">sin confirmar</span>. El Physicians’ Health Study, de predominio no fumador, no mostró efecto.</p></div>
+    </div>
+    <div class="narrow"><p class="rv">Con vitamina E el cuadro es más ambiguo: la cohorte VITAL halló riesgo concentrado en fumadores actuales (observacional), y un análisis de ATBC con niveles séricos mostró 21–24% menos riesgo con más alfa-tocoferol sérico, que no es lo mismo que suplementar (<a href="https://www.pubmed.ncbi.nlm.nih.gov/17989343/">PubMed 17989343</a>; <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7019088">PMC7019088</a>).</p></div>
+
+    <h3 class="rv">Cinco mecanismos de daño en hierbas</h3>
+    <div class="grid g2">
+      <div class="card rv"><span class="tag">Alcaloides pirrolizidínicos</span><h4>Consuelda, petasita</h4><p>La FDA pidió en 2001 retirar suplementos orales de consuelda (<a href="https://www.e-lactancia.org/media/papers/Comfrey-FDA2001.pdf">FDA 2001</a>). La petasita (butterbur) también contiene estos alcaloides (<a href="https://www.consumerlab.com/answers/which-supplements-can-cause-liver-toxicity/liver-toxicity">ConsumerLab</a>).</p></div>
+      <div class="card rv"><span class="tag">Hígado</span><h4>Kava</h4><p>Advertencia de la FDA en 2002 y prohibición de venta en Canadá (<a href="https://www.naturalproductsinsider.com/regulatory/health-canada-issues-advisories-kava-comfrey">Natural Products Insider</a>).</p></div>
+      <div class="card rv"><span class="tag">EFSA 2018</span><h4>Extracto de té verde</h4><p>Efectos hepáticos desde 800 mg de EGCG/día como suplemento, sin dosis segura identificada (<a href="https://www.nutraingredients.com/Article/2018/04/19/EGCG-warning-EFSA-safety-assessment-suggests-green-tea-supplements-should-come-with-warning">Nutraingredients</a>).</p></div>
+      <div class="card rv"><span class="tag">Serie DILIN</span><h4>Cúrcuma</h4><p>10 casos de daño hepático: 7 con el alelo HLA-B*35:01, 5 hospitalizados y 1 muerte, con 3 productos que contenían piperina (fuentes secundarias: <a href="https://edzardernst.com/2022/10/liver-injury-associated-with-turmeric-a-case-series/">Ernst</a>; <a href="https://sciencebasedmedicine.org/?p=83840">Science-Based Medicine</a>).</p></div>
+      <div class="card rv"><span class="tag">Glicirricina</span><h4>Regaliz</h4><p>Hipopotasemia y arritmia, con daño posible desde unos 100 mg de glicirricina diarios en personas susceptibles (<a href="https://www.livescience.com/health/medicine-drugs/how-does-licorice-interfere-with-medications">Live Science</a>, fuente de segunda mano).</p></div>
+      <div class="card rv"><span class="tag">Específico a los pulmones</span><h4>Verbasco, litre, miel</h4><p>El verbasco tiene semillas con rotenona y pelos foliares que irritan la garganta sin colar (<a href="https://acibademinternational.com/blog/mullein-tea-the-lung-tea-trend-vs-the-evidence/">Acibadem</a>, fuente secundaria). El litre puede producir dermatitis de contacto. La miel está contraindicada bajo un año por botulismo.</p></div>
+    </div>
+
+    <h3 class="rv">Interacciones con fármacos pulmonares</h3>
+    <div class="tablewrap rv">
+      <table>
+        <thead><tr><th>Combinación</th><th>Qué se halló</th><th>Solidez</th></tr></thead>
+        <tbody>
+          <tr><td>Regaliz + corticoides</td><td>Inhibe la 11-beta-HSD y eleva la exposición a prednisolona. Estudio japonés (n=103): hipopotasemia en 41,9% con glucocorticoides y 75% con preparados de glicirricina (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9924636">PMC9924636</a>).</td><td>Observacional</td></tr>
+          <tr><td>Hierba de San Juan + teofilina</td><td>Un solo reporte de caso con niveles del fármaco más bajos; un estudio en voluntarios sanos sin interacción relevante (<a href="https://pharmaceutical-journal.com/article/ld/theophylline-interactions">Pharmaceutical Journal</a>).</td><td>Contradictoria</td></tr>
+          <tr><td>Danshen + warfarina</td><td>Elevó el INR en un ensayo de 40 personas; un caso con INR sobre 8,4 y hemotórax (<a href="https://dx.doi.org/10.11622/smedj.2015004">Singapore Med J</a>). Ginkgo con warfarina: sin cambio clínico relevante.</td><td>Ensayo pequeño y casos</td></tr>
+          <tr><td>Regaliz + agonistas beta, teofilina o diuréticos</td><td>Podría sumar hipopotasemia.</td><td>Inferencia, sin fuente directa</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="narrow"><p class="rv small">No se halló ningún dato sobre hierbas con corticoides inhalados, LABA o LAMA, ni sobre NAC.</p></div>
+
+    <h3 class="rv">Los fármacos también tienen riesgos</h3>
+    <div class="grid g3">
+      <div class="card rv"><h4>Inhalados y montelukast</h4><p>Los corticoides inhalados se asocian a más neumonía. En 2020 la FDA exigió una advertencia en recuadro por eventos neuropsiquiátricos de montelukast (<a href="https://www.pharmacytimes.com/news/fda-requires-boxed-warning-for-commonly-prescribed-asthma-medication">Pharmacy Times</a>).</p></div>
+      <div class="card rv"><h4>Vareniclina</h4><p>Pfizer retiró voluntariamente en 2021 todos los lotes de Chantix por la impureza N-nitroso-vareniclina. La FDA indicó que no había riesgo inmediato y que dejar de fumar pesa más (<a href="https://www.fda.gov/drugs/drug-safety-and-availability/fda-alerts-health-care-professionals-and-patients-voluntary-recall-varenicline-chantix-warehouse">FDA</a>).</p></div>
+      <div class="card rv"><h4>Azitromicina, roflumilast, nintedanib</h4><p>Azitromicina: pérdida de audición (25% vs 20%) y QT. Roflumilast: diarrea, náuseas, pérdida de peso, insomnio (<a href="https://www.chestphysician.org/what-do-you-recommend-for-this-patient-with-copd/">Chest Physician</a>). Nintedanib: diarrea en 62,4% vs 18,4% (<a href="https://consultqd.clevelandclinic.org/pirfenidone-and-nintedanib-novel-agents-in-the-treatment-of-idiopathic-pulmonary-fibrosis">Cleveland Clinic</a>).</p></div>
+    </div>
+    <div class="callout rv">
+      <h4>Un matiz de sesgo</h4>
+      <p>En diciembre de 2017 la FDA quitó la advertencia de muerte por asma de las combinaciones ICS/LABA tras cuatro ensayos de 26 semanas ejecutados por los fabricantes (GSK, Merck, AstraZeneca) por mandato de la FDA. Comentaristas notaron que excluyeron asma con riesgo vital (<a href="https://www.hcplive.com/view/removal-of-fda-warning-on-asthma-inhalants-follows-manufacturers-research">HCPLive</a>). Que BOREAS/NOTUS (Sanofi/Regeneron) y MATINEE (GSK) tengan patrocinio industrial es conocimiento previo del autor de las notas, sin fuente.</p>
+    </div>
+  </div>
+</section>
+
+<section id="fraude" class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">05 · Fraude y literatura frágil</div>
+      <h2>Lo que revelan los reguladores.</h2>
+      <p class="sub">Para la FDA, cualquier producto de “detox” o “limpieza” que nombre una enfermedad respiratoria es un medicamento no aprobado, sin importar que se etiquete como suplemento.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card rv"><span class="tag">FDA · 8 septiembre 2025</span><h4>DoubleNano Advanced Lung Detox Relief Patch</h4><p>Carta de advertencia en línea a MOLOOCO (Ourlyard): recomendado para cáncer de pulmón, EPOC, asma y fibrosis. 30 días para corregir (<a href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/molooco-dba-ourlyard-online-advisory-letter">FDA</a>).</p></div>
+      <div class="card rv"><span class="tag">FDA · 7 marzo 2023</span><h4>“Lung Tonic COPD”</h4><p>Carta de advertencia a Herbal Vitality: el solo nombre implicaba intención de tratar la enfermedad. Producto considerado medicamento no aprobado y mal etiquetado (<a href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/warning-letters/herbal-vitality-inc-640206-03072023">FDA</a>).</p></div>
+      <div class="card rv"><span class="tag">FDA · 2016</span><h4>“Lung Support” (Tibetan Herbal Balance)</h4><p>El texto visible cita adulteración por buenas prácticas de manufactura, pero el detalle está tras un muro de pago y las notas se contradicen sobre si fue adulteración o solo afirmaciones de enfermedad (<a href="https://www.consumerlab.com/recalls/11903/seller-of-liver-lung-support-supplements-warned-for-drug-claims/">ConsumerLab</a>).</p></div>
+      <div class="card rv"><span class="tag">Solo resumen</span><h4>Otros casos sin confirmar</h4><p>Cartas a Healing Ways (2012) y un lote de cartas de la FDA a diez empresas en febrero de 2026 <span class="flag">sin confirmar</span>. FTC: sin caso específico de pulmón; solo una orden de 2005 contra Gerovita sobre productos respiratorios.</p></div>
+    </div>
+
+    <div class="narrow">
+      <h3 class="rv">Adulteración: amplia, pero no pulmonar</h3>
+      <p class="rv">Tucker y colaboradores (JAMA Netw Open, 2018) analizaron <b>776 productos adulterados</b> de la base de la FDA 2007–2016: 45,5% de mejora sexual, 40,9% de baja de peso y 11,9% de masa muscular. Las retiradas ocurrieron en menos de la mitad de los casos (<a href="https://www.naturalproductsinsider.com/regulatory/researchers-find-nearly-800-supplements-fda-database-identified-tainted-drug-ingredients">Natural Products Insider</a>, solo cobertura de prensa). Que mezclas “respiratorias naturales” puedan llevar corticoides o estimulantes ocultos es una hipótesis plausible, sin estudio que la demuestre en productos pulmonares.</p>
+      <h3 class="rv">Chile</h3>
+      <p class="rv">No se halló ninguna acción del ISP, la SEREMI o el SERNAC sobre productos de “detox” pulmonar. Los análogos más cercanos:</p>
+      <ul class="list rv">
+        <li>Retirada de 28 “suplementos” adelgazantes reclasificados como medicamentos en 2017 (<a href="https://www.cnnchile.com/pais/cuales-son-los-28-suplementos-alimenticios-que-el-isp-obligo-sacar-del-mercado_20170509/">CNN Chile</a>).</li>
+        <li>Alerta de 2026 por miel “afrodisiaca” con sildenafilo y tadalafilo no declarados (<a href="https://www.meganoticias.cl/nacional/526860-isp-alerta-venta-miel-afrodisiaca-farmacos-ocultos-muerte-subita-graves-riesgos-salud-13-07-2026.html">Meganoticias</a>).</li>
+        <li>Alerta de noviembre de 2025 por parches adelgazantes sin registro (<a href="https://www.meganoticias.cl/nacional/506409-isp-alerta-parches-bajar-peso-sin-registro-sanitario-20-11-2025.html">Meganoticias</a>).</li>
+      </ul>
+      <p class="rv">Un parche pulmonar de la misma lógica es plausible, pero es inferencia: no hay alerta encontrada.</p>
+      <h3 class="rv">Literatura frágil</h3>
+      <p class="rv">Hindawi/Wiley retractó varios artículos de decocciones chinas, cúrcuma inhalada y berberina en EPOC por manipulación del proceso de revisión o dudas sobre imágenes (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10732750/">Bufei</a>; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10447031/">curcumina</a>; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12917418/">berberina</a>). Eran estudios preclínicos o ensayos pequeños, ninguno base de un producto comercial de “limpieza”, y no se verificó vínculo con financiamiento industrial.</p>
+      <h3 class="rv">Disponibilidad en Chile</h3>
+      <p class="rv">Los registros de budesonida/formoterol (por ejemplo Symbicort y Duoresp) y de genéricos de pirfenidona figuran en una base de terceros, no en el registro del ISP (<a href="https://www.vademecum.es/chile/medicamento/1289842/symbicort-turbuhaler-320-9-polvo-inhalacion-bucal">Vademecum Chile</a>). Un documento de la UDD indica que los antifibróticos no están cubiertos por GES ni por la Ley Ricarte Soto (<a href="https://gobierno.udd.cl/cips/files/2026/04/enfermedades-pulmonares-intersticiales-progresivas.pdf">UDD CIPS 2026</a>). No se confirmó en el ISP la situación de nintedanib, tiotropio, dupilumab, mepolizumab, nerandomilast, ensifentrina ni vareniclina.</p>
+    </div>
+  </div>
+</section>
+
+<section id="conclusion">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">06 · Conclusión</div>
+      <h2>La pregunta “¿qué limpia los pulmones?” tiene dos respuestas honestas. Ninguna es un producto.</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card rv"><span class="tag">Primera</span><h4>Dejar de exponerse al humo</h4><p>Es lo único con evidencia de alta certeza y permite la depuración mucociliar y la desaceleración de la caída del VEF1.</p></div>
+      <div class="card rv"><span class="tag">Segunda</span><h4>Fármacos para quien ya tiene enfermedad</h4><p>Los que tienen respaldo modifican exacerbaciones o función, no el daño estructural.</p></div>
+    </div>
+    <div class="narrow">
+      <p class="rv">El hallazgo más útil para un consumidor es asimétrico: los suplementos con apoyo son pocos y de efecto pequeño (NAC, cineol, miel, vitamina D si hay déficit severo), mientras que varios de los más populares, cuando se toman “para proteger” a un fumador, son los que más daño han mostrado.</p>
+    </div>
+  </div>
+</section>
+
+<section id="limites" class="alt">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kicker">Límites</div>
+      <h2>Lo que este informe no pudo verificar.</h2>
+    </div>
+    <div class="narrow">
+      <ul class="list rv">
+        <li>No hay revisión sistemática de productos “detox”.</li>
+        <li>Los textos primarios de GOLD y GINA no se abrieron.</li>
+        <li>El estado regulatorio de varios fármacos en Chile quedó sin verificar en el registro del ISP.</li>
+        <li>No existen datos sobre interacciones de hierbas con inhaladores.</li>
+        <li>Dos notas discrepan: el tamaño de la revisión Cochrane de mucolíticos y el exceso de cáncer en ATBC.</li>
+        <li>Quedan sin confirmar: GOLD 2026 con mepolizumab (un solo artículo), el estudio observacional de azitromicina frente a roflumilast, la lista de la FDA a diez empresas de 2026, y las cartas a Healing Ways y Gerovita (solo resumen).</li>
+        <li>Se omitieron las cifras de roflumilast y azitromicina que las notas daban “de memoria”, y el patrocinio industrial de BOREAS/NOTUS y MATINEE.</li>
+      </ul>
+    </div>
+    <div class="callout red rv">
+      <h4>Antes de combinar productos</h4>
+      <p>Cualquier persona con EPOC, asma, fibrosis o tos persistente debería consultar a su equipo tratante antes de combinar productos naturales con su tratamiento, en particular con corticoides, teofilina, warfarina o diuréticos.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Aviso.</b> Información de investigación, no consejo médico. Basada en notas de tres investigadores que trabajaron sobre resúmenes de buscadores y fuentes secundarias; verifica las cifras contra la fuente primaria. Contenido generado con asistencia de IA.</p>
+    <p>Pulmones · Investigación forense de medicinas naturales y farmacéuticas · 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // reveal on scroll
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    els.forEach(function(e){io.observe(e)});
+  }
+  // verdict filter
+  var btns=document.querySelectorAll('.filters button'),items=document.querySelectorAll('#verdicts .v');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    var f=b.dataset.f;
+    items.forEach(function(i){i.hidden=!(f==='all'||i.dataset.v===f)});
+  })});
+})();
+</script>
+</body>
+</html>
